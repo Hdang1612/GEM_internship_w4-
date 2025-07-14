@@ -1,0 +1,7 @@
+<div class="form-control">
+  <label for="{{ label }}">{{ label }} </label>
+  <input [type]="type" [formControl]="control" [placeholder]="placeholder" />
+  <div class="invalid-message" *ngIf="control.invalid && control.touched">
+    <p>invalid</p>
+  </div>
+</div>
