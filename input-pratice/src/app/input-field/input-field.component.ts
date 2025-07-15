@@ -12,6 +12,9 @@ export class InputFieldComponent implements OnInit {
   @Input() type!: 'text' | 'password' | 'email' | 'number';
   @Input() placeholder: string = '';
   constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.control.statusChanges.subscribe(() => {
+      console.log(this.control.errors);
+    });
+  }
 }

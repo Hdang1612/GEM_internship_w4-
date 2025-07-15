@@ -1,7 +1,33 @@
 <div class="form-control">
   <label for="{{ label }}">{{ label }} </label>
-  <input [type]="type" [formControl]="control" [placeholder]="placeholder" />
-  <div class="invalid-message" *ngIf="control.invalid && control.touched">
-    <p>invalid</p>
+  <input
+    required="true"
+    [class.invalid-input]="control.invalid && control.dirty"
+    [type]="type"
+    [formControl]="control"
+    [placeholder]="placeholder"
+  />
+  <div class="invalid-message" *ngIf="control.invalid && control.dirty">
+    <p *ngIf="control.errors?.['required']">Trường này là bắt buộc.</p>
+    <p *ngIf="!control.errors?.['required'] && control.errors?.['email']">
+      Email không hợp lệ.
+    </p>
+    <p
+      *ngIf="
+        !control.errors?.['required'] &&
+        !control.errors?.['email'] &&
+        control.errors?.['minlength']
+      "
+    >
+      Độ dài tối thiểu là {{ control.errors?.['minlength'].requiredLength }} ký
+      tự.
+    </p>
+    <p
+      *ngIf="!control.errors?.['required'] &&
+        !control.errors?.['email'] &&
+        !control.errors?.['minlength'] &&control.errors?.['forbiddenName'] "
+    >
+      example Hdang1612@!
+    </p>
   </div>
 </div>

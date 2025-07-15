@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { forbiddenNameValidator } from 'src/shared/directive';
 
 @Component({
   selector: 'app-simple-form',
@@ -9,15 +10,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SimpleFormComponent implements OnInit {
   constructor() {}
   form = new FormGroup({
-    userName: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    userName: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+      forbiddenNameValidator(
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+      ),
+    ]),
   });
   getControl(name: string) {
     return this.form.get(name) as FormControl;
   }
   ngOnInit(): void {}
   onSubmit() {
-    console.log(this.form.value);
     if (this.form.valid) {
       alert('submitted');
     }

@@ -1,9 +1,15 @@
 .form-control {
-  position: relative;
-}
-
-.invalid-message {
-  color: red;
-  position: absolute;
-  top: 24px;
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  input {
+    padding: 8px;
+  }
+  .invalid-input {
+    border: 1px solid red;
+  }
+  .invalid-message p {
+    color: red;
+    margin: 0;
+  }
 }

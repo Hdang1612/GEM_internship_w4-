@@ -3,27 +3,29 @@
   <app-input-field [label]="password"></app-input-field>
   <button class="submit-btn"> Login</button>
 </div> -->
-<div class="form-container">
-  <app-input-field
-    label="userName"
-    [control]="getControl('userName')"
-    placeholder="Input user name"
-    type="text"
-  ></app-input-field>
-  <app-input-field
-    label="password"
-    [control]="getControl('password')"
-    placeholder="Input password"
-    type="password"
-  ></app-input-field>
-  {{ form.value | json }}
+<div class="container">
+  <div class="form-container">
+    <app-input-field
+      label="userName"
+      [control]="getControl('userName')"
+      placeholder="Input user name"
+      type="text"
+    ></app-input-field>
+    <app-input-field
+      label="password"
+      [control]="getControl('password')"
+      placeholder="Input password"
+      type="password"
+    ></app-input-field>
+    <!-- {{ form.value | json }} -->
 
-  <button
-    class="submit-btn"
-    (click)="onSubmit()"
-    type="submit"
-    [disabled]="form.invalid"
-  >
-    Login
-  </button>
+    <button
+      class="submit-btn"
+      (click)="onSubmit()"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Login
+    </button>
+  </div>
 </div>
