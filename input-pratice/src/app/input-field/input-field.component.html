@@ -2,12 +2,12 @@
   <label for="{{ label }}">{{ label }} </label>
   <input
     required="true"
-    [class.invalid-input]="control.invalid && control.dirty"
+    [class.invalid-input]="control.invalid && control.touched"
     [type]="type"
     [formControl]="control"
     [placeholder]="placeholder"
   />
-  <div class="invalid-message" *ngIf="control.invalid && control.dirty">
+  <div class="invalid-message" *ngIf="control.invalid && control.touched">
     <p *ngIf="control.errors?.['required']">Trường này là bắt buộc.</p>
     <p *ngIf="!control.errors?.['required'] && control.errors?.['email']">
       Email không hợp lệ.

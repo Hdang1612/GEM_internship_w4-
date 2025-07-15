@@ -22,10 +22,16 @@ export class SimpleFormComponent implements OnInit {
   getControl(name: string) {
     return this.form.get(name) as FormControl;
   }
+  markAsAllTouched(): void {
+    Object.keys(this.form.controls).forEach((key) => {
+      this.form.get(key)?.markAsTouched();
+    });
+  }
   ngOnInit(): void {}
   onSubmit() {
-    if (this.form.valid) {
-      alert('submitted');
+    if (this.form.invalid) return this.markAsAllTouched();
+    else {
+      console.log(this.form.value);
     }
   }
 }
