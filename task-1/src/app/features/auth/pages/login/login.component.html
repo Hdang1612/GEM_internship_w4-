@@ -1,1 +1,65 @@
-<p>login works!</p>
+<div class="container">
+  <div class="login__wrapper">
+    <div class="text-white">
+      <h2 class="mb-2">Đăng nhập</h2>
+      <p class="sub-description">Nhập thông tin tài khoản</p>
+
+      <form
+        class="form-container"
+        #loginForm="ngForm"
+        (ngSubmit)="onSubmit(loginForm)"
+      >
+        <div class="form-group mb-4 w-full">
+          <input
+            type="text"
+            id="name"
+            name="email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+            placeholder="Email"
+            required
+            email
+          />
+          <div
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="alert"
+          >
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Email Format !!</div>
+          </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            placeholder="Password"
+            required
+          />
+          <div
+            *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="alert"
+          >
+            <div *ngIf="password.errors?.['required']">
+              password is required.
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit w-full cursor-pointer">
+          Đăng nhập
+        </button>
+      </form>
+      <div
+        class="sign-up-container mt-[2rem] flex w-full justify-center text-[1rem] font-[500]"
+      >
+        Chưa có tài khoản ?<a
+          routerLink="/signup"
+          class="signup-navigate-button ms-3 hover:cursor-pointer hover:underline"
+        >
+          Đăng ký
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

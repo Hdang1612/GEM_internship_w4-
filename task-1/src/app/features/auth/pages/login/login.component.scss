@@ -1,0 +1,103 @@
+.container {
+  width: 100%;
+  background: #0f0f0f;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__wrapper {
+  width: 40rem;
+  padding: 97px 40px 41px 40px;
+  max-height: 80vh;
+  border-radius: 20px;
+  border: 1px solid var(--Glass1-Stroke-Carey, #afafaf);
+  color: white;
+  background: linear-gradient(
+      321deg,
+      rgba(191, 191, 191, 0.06) 5.98%,
+      rgba(0, 0, 0, 0) 66.28%
+    ),
+    rgba(0, 0, 0, 0.14);
+  box-shadow: -8px 4px 5px 0px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(2.65rem);
+  z-index: 999;
+
+  h2 {
+    color: #fff;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .sub-description {
+    color: #fff;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .form-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    .form-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    input {
+      display: flex;
+      width: 100%;
+      padding: 1.2rem;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 1.2rem;
+      border: 1px solid #fff;
+      background-color: transparent;
+      color: white;
+    }
+
+    .btn-submit {
+      width: 100%;
+      cursor: pointer;
+      border: 0;
+      display: flex;
+      padding: 14px 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 12px;
+      color: white;
+      background: linear-gradient(
+        91deg,
+        #628eff 9.91%,
+        #8740cd 53.29%,
+        #580475 91.56%
+      );
+    }
+    .alert {
+      color: white;
+    }
+  }
+  .sign-up-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+
+    .signup-navigate-button {
+      margin-left: 1.2rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+    }
+    .signup-navigate-button:hover {
+      text-decoration: underline;
+    }
+  }
+}

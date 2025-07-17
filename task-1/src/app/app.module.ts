@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { UserCreateComponent } from './features/user/pages/user-create/user-crea
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,7 @@ import { LoginComponent } from './features/auth/pages/login/login.component';
     NotFoundPageComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
