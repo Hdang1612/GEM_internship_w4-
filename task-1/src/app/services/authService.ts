@@ -7,7 +7,6 @@ import { tokenResponse } from '../shared/types/token';
 import { environment } from '../environment';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  loginUrl = 'https://reqres.in/api/login';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

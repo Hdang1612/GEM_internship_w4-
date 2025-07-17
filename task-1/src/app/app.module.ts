@@ -14,6 +14,7 @@ import { MainLayoutComponent } from './shared/main-layout/main-layout.component'
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { UserListItemComponent } from './shared/components/user-list-item/user-list-item.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     MainLayoutComponent,
     NotFoundPageComponent,
     LoginComponent,
+    UserListItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   bootstrap: [AppComponent],

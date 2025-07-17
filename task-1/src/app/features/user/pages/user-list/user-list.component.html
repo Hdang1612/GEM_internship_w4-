@@ -1,1 +1,37 @@
-<p>user-list works!</p>
+<div class="content">
+  <div class="content__header">Danh sách người dùng</div>
+
+  <div class="content__users-list">
+    <div *ngIf="isLoading">...Loading</div>
+    <ng-container *ngIf="!isLoading">
+      <app-user-list-item
+        *ngFor="let user of users"
+        [user]="user"
+      ></app-user-list-item>
+    </ng-container>
+  </div>
+  <div class="pagination">
+    <span
+      class="prev-btn pagination__btns"
+      (click)="prevPage()"
+      [class.pagination__btns--disable]="currentPage === 1"
+      ><img src="./assets/arrow-left.svg" alt=""
+    /></span>
+    <div class="pagination__pages">
+      <button
+        class="pagination__item"
+        *ngFor="let page of totalPages"
+        [class.pagination__item--active]="page === currentPage"
+        (click)="paginate(page)"
+      >
+        {{ page }}
+      </button>
+    </div>
+    <span
+      class="next-btn pagination__btns"
+      (click)="nextPage()"
+      [class.pagination__btns--disable]="currentPage === totalPages.length"
+      ><img src="./assets/arrow-right.svg" alt=""
+    /></span>
+  </div>
+</div>
