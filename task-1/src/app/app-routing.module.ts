@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
-import { UserListComponent } from './feature/user/pages/user-list/user-list.component';
-import { UserDetailComponent } from './feature/user/pages/user-detail/user-detail.component';
-import { UserUpdateComponent } from './feature/user/pages/user-update/user-update.component';
+import { UserListComponent } from './features/user/pages/user-list/user-list.component';
+import { UserDetailComponent } from './features/user/pages/user-detail/user-detail.component';
+import { UserUpdateComponent } from './features/user/pages/user-update/user-update.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
-import { UserCreateComponent } from './feature/user/pages/user-create/user-create.component';
+import { UserCreateComponent } from './features/user/pages/user-create/user-create.component';
+import { LoginComponent } from './features/auth/pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
       { path: 'update/:userId', component: UserUpdateComponent },
       { path: 'create', component: UserCreateComponent },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '**',
