@@ -7,9 +7,12 @@
       <app-user-list-item
         *ngFor="let user of users"
         [user]="user"
+        [routerLink]="['/user/detail', user.id]"
       ></app-user-list-item>
     </ng-container>
   </div>
+
+  <!-- pagination -->
   <div class="pagination">
     <span
       class="prev-btn pagination__btns"

@@ -25,9 +25,9 @@ export class UserService {
       })
       .pipe(catchError(this.handleError()));
   }
-  getUserDetail(id: number): Observable<User> {
+  getUserDetail(id: string | null): Observable<any> {
     return this.http
-      .get<User>(`${environment.apiUrl}/users/${id}`, this.options)
+      .get<any>(`${environment.apiUrl}/users/${id}`, this.options)
       .pipe(catchError(this.handleError()));
   }
   deleteUser(id: number): Observable<any> {
