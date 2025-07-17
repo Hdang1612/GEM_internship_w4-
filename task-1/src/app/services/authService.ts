@@ -19,13 +19,12 @@ export class AuthService {
     };
   }
   constructor(private http: HttpClient) {}
-  login(userInfo: Auth): Observable<tokenResponse> {
+  login(userInfo: Auth): Observable<any> {
     return this.http
-      .post<tokenResponse>(
-        `${environment.apiUrl}/login`,
-        userInfo,
-        this.httpOptions
-      )
+      .post<any>(`${environment.apiUrl}/login`, userInfo, this.httpOptions)
       .pipe(catchError(this.handleError()));
+  }
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
   }
 }

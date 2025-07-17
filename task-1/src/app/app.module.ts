@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UserListItemComponent } from './shared/components/user-list-item/user-list-item.component';
+import { AuthInterceptor } from './features/auth/interceptors/auth-interceptor';
+import { ErrorInterceptor } from './features/auth/interceptors/error-interceptor';
 
 @NgModule({
   declarations: [
@@ -32,5 +34,17 @@ import { UserListItemComponent } from './shared/components/user-list-item/user-l
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class AppModule {}

@@ -1,3 +1,3 @@
 export interface tokenResponse {
-  token: string;
+  token: any;
 }
