@@ -28,6 +28,7 @@ export class SimpleFormComponent implements OnInit {
     if (this.form.invalid) return this.form.markAllAsTouched();
     else {
       console.log(this.form.value);
+
     }
   }
 }

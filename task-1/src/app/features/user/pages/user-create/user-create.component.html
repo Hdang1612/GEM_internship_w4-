@@ -1,1 +1,25 @@
-<p>user-create works!</p>
+<div class="container">
+  <div class="form-container">
+    <app-text-input
+      label="first_name"
+      [control]="getControl('first_name')"
+      placeholder="Input user name"
+      type="text"
+    ></app-text-input>
+    <app-text-input
+      label="last_name"
+      [control]="getControl('last_name')"
+      placeholder="Input user name"
+      type="text"
+    ></app-text-input>
+    <app-text-input
+      label="email"
+      [control]="getControl('email')"
+      placeholder="Input password"
+      type="email"
+    ></app-text-input>
+    {{ createForm.value | json }}
+
+    <button class="submit-btn" (click)="onSubmit()" type="submit">Thêm</button>
+  </div>
+</div>

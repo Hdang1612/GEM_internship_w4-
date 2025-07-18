@@ -1,1 +1,16 @@
-<p>text-input works!</p>
+<div class="form-control">
+  <label for="{{ label }}">{{ label }} </label>
+  <input
+    required="true"
+    [class.invalid-input]="control.invalid && control.touched"
+    [type]="type"
+    [formControl]="control"
+    [placeholder]="placeholder"
+  />
+  <div
+    class="invalid-message"
+    *ngIf="control.invalid && control.touched && errorMessage"
+  >
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

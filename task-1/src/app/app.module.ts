@@ -13,7 +13,7 @@ import { UserCreateComponent } from './features/user/pages/user-create/user-crea
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserListItemComponent } from './shared/components/user-list-item/user-list-item.component';
 import { AuthInterceptor } from './features/auth/interceptors/auth-interceptor';
 import { ErrorInterceptor } from './features/auth/interceptors/error-interceptor';
@@ -32,7 +32,13 @@ import { ErrorInterceptor } from './features/auth/interceptors/error-interceptor
     LoginComponent,
     UserListItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   bootstrap: [AppComponent],
   providers: [
     {
