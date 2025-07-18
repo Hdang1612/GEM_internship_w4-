@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/userService';
+import { UserService } from 'src/app/core/services/userService';
 
 @Component({
   selector: 'app-user-create',

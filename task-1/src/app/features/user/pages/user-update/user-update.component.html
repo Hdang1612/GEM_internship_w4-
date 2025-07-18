@@ -1,1 +1,25 @@
-<p>user-update works!</p>
+<div class="container">
+  <app-loading *ngIf="isLoading"></app-loading>
+  <div *ngIf="!isLoading" class="form-container">
+    <app-text-input
+      label="First Name"
+      [control]="getControl('first_name')"
+      placeholder="Input first name"
+      type="text"
+    ></app-text-input>
+    <app-text-input
+      label="Last Name"
+      [control]="getControl('last_name')"
+      placeholder="Input last name"
+      type="text"
+    ></app-text-input>
+    <app-text-input
+      label="Email"
+      [control]="getControl('email')"
+      placeholder="Input email"
+      type="email"
+    ></app-text-input>
+
+    <button class="submit-btn" (click)="Update()" type="submit">Update</button>
+  </div>
+</div>

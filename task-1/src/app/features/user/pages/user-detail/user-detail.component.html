@@ -1,6 +1,6 @@
 <div class="content">
   <div class="content__header">Chi tiết user</div>
-  <div *ngIf="isLoading">...Loading</div>
+  <app-loading *ngIf="isLoading"></app-loading>
   <div *ngIf="!isLoading">
     <h2>{{ user.first_name }} {{ user.last_name }}</h2>
     <p>{{ user.email }}</p>

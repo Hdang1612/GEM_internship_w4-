@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
+import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
 import { UserListComponent } from './features/user/pages/user-list/user-list.component';
 import { UserDetailComponent } from './features/user/pages/user-detail/user-detail.component';
 import { UserUpdateComponent } from './features/user/pages/user-update/user-update.component';

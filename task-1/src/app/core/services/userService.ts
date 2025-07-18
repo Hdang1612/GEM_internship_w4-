@@ -1,8 +1,8 @@
-import { User, UserDataResponse } from './../shared/types/user';
+import { User, UserDataResponse } from '../model/types/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { environment } from '../environment';
+import { environment } from 'src/environments/environment';
 @Injectable({ providedIn: 'root' })
 export class UserService {
   options = {
@@ -40,7 +40,7 @@ export class UserService {
       .post<any>(`${environment.apiUrl}/users`, user, this.options)
       .pipe(catchError(this.handleError()));
   }
-  updateUser(user: User, id: number): Observable<any> {
+  updateUser(user: User, id: string): Observable<any> {
     return this.http
       .put<any>(`${environment.apiUrl}/users/${id}`, user, this.options)
       .pipe(catchError(this.handleError()));

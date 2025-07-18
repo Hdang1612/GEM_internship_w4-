@@ -10,14 +10,15 @@ import { UserListComponent } from './features/user/pages/user-list/user-list.com
 import { UserDetailComponent } from './features/user/pages/user-detail/user-detail.component';
 import { UserUpdateComponent } from './features/user/pages/user-update/user-update.component';
 import { UserCreateComponent } from './features/user/pages/user-create/user-create.component';
-import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
+import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserListItemComponent } from './shared/components/user-list-item/user-list-item.component';
-import { AuthInterceptor } from './features/auth/interceptors/auth-interceptor';
-import { ErrorInterceptor } from './features/auth/interceptors/error-interceptor';
-import { PopupConfirmComponent } from './shared/components/popup-confirm/popup-confirm.component';
+import { AuthInterceptor } from './core/interceptors/auth-interceptor';
+import { ErrorInterceptor } from './core/interceptors/error-interceptor';
+import { PopupConfirmComponent } from './components/popup-confirm/popup-confirm.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PopupConfirmComponent } from './shared/components/popup-confirm/popup-c
     LoginComponent,
     UserListItemComponent,
     PopupConfirmComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

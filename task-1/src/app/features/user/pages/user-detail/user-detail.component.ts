@@ -1,7 +1,7 @@
-import { UserService } from 'src/app/services/userService';
+import { UserService } from 'src/app/core/services/userService';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from 'src/app/shared/types/user';
+import { User } from 'src/app/core/model/types/user';
 
 @Component({
   selector: 'app-user-detail',
@@ -18,8 +18,8 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const productId = routeParams.get('userId');
-    this.userService.getUserDetail(productId).subscribe({
+    const userId = routeParams.get('userId');
+    this.userService.getUserDetail(userId).subscribe({
       next: (res) => {
         console.log('detail', res);
         this.user = res.data;

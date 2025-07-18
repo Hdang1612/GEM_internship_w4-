@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Auth } from '../shared/types/auth';
-import { tokenResponse } from '../shared/types/token';
-import { environment } from '../environment';
+import { Auth } from '../model/types/auth';
+import { tokenResponse } from '../model/types/token';
+import { environment } from '../../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   httpOptions = {
