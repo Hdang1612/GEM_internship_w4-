@@ -7,11 +7,12 @@ import { UserUpdateComponent } from './features/user/pages/user-update/user-upda
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { UserCreateComponent } from './features/user/pages/user-create/user-create.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 const routes: Routes = [
   {
     path: 'user',
-    component: MainLayoutComponent,
+    component: MainLayoutComponent,canActivate:[AuthGuard],
     children: [
       { path: '', component: UserListComponent },
       { path: 'detail/:userId', component: UserDetailComponent },
