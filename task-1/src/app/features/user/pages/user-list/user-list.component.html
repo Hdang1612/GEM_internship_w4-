@@ -1,13 +1,17 @@
 <div class="content">
   <div class="content__header">Danh sách người dùng</div>
-
+  <div class="add-btn-container">
+    <button [routerLink]="['/user/create']" class="add-btn">
+      Thêm <img src="./assets/plus.svg" alt="" />
+    </button>
+  </div>
   <div class="content__users-list">
     <div *ngIf="isLoading">...Loading</div>
     <ng-container *ngIf="!isLoading">
       <app-user-list-item
         *ngFor="let user of users"
         [user]="user"
-        [routerLink]="['/user/detail', user.id]"
+        
       ></app-user-list-item>
     </ng-container>
   </div>

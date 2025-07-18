@@ -30,7 +30,7 @@ export class UserService {
       .get<any>(`${environment.apiUrl}/users/${id}`, this.options)
       .pipe(catchError(this.handleError()));
   }
-  deleteUser(id: number): Observable<any> {
+  deleteUser(id: string): Observable<any> {
     return this.http
       .delete<any>(`${environment.apiUrl}/users/${id}`, this.options)
       .pipe(catchError(this.handleError()));

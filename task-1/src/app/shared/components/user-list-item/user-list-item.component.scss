@@ -2,8 +2,12 @@
   display: flex;
   border: 0.1rem solid #ccc;
   border-radius: 2rem;
-  padding: 1rem;
-  cursor: pointer;
+  padding: 1rem 1.4rem;
+  justify-content: space-between;
+  .info-container {
+    display: flex;
+    cursor: pointer;
+  }
   &__avatar {
     width: 6rem;
     height: 6rem;
@@ -31,6 +35,17 @@
     #email {
       font-size: 1.2rem;
       color: #555;
+    }
+  }
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    // gap: 0.3rem;
+    // align-items: center;
+    justify-content: space-around;
+    button {
+      border: none;
+      cursor: pointer;
     }
   }
 }

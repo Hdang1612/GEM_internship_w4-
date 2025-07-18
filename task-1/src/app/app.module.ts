@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserListItemComponent } from './shared/components/user-list-item/user-list-item.component';
 import { AuthInterceptor } from './features/auth/interceptors/auth-interceptor';
 import { ErrorInterceptor } from './features/auth/interceptors/error-interceptor';
+import { PopupConfirmComponent } from './shared/components/popup-confirm/popup-confirm.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ErrorInterceptor } from './features/auth/interceptors/error-interceptor
     NotFoundPageComponent,
     LoginComponent,
     UserListItemComponent,
+    PopupConfirmComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,23 @@
 <div class="user-item">
-  <div class="user-item__avatar">
-    <img src="{{ user.avatar }}" alt="avatar" />
+  <div class="info-container" [routerLink]="['/user/detail', user.id]">
+    <div class="user-item__avatar">
+      <img src="{{ user.avatar }}" alt="avatar" />
+    </div>
+    <div class="user-item__info">
+      <div id="name">{{ user.first_name }} {{ user.last_name }}</div>
+      <div id="email">{{ user.email }}</div>
+    </div>
   </div>
-  <div class="user-item__info">
-    <div id="name">{{ user.first_name }} {{ user.last_name }}</div>
-    <div id="email">{{ user.email }}</div>
+  <div class="btn-container">
+    <button class="update-btn" [routerLink]="['/user/update', user.id]">
+      <img src="./assets/update-icon.svg" alt="" />
+    </button>
+    <button class="delete-btn" (click)="deleteUser()">
+      <img src="./assets/delete-icon.svg" alt="" />
+    </button>
   </div>
 </div>
+<app-popup-confirm
+  *ngIf="isShowConfirm"
+  (confirmStatus)="handleConfirm($event)"
+></app-popup-confirm>

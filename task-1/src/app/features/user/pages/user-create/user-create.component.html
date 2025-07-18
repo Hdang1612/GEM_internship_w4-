@@ -1,24 +1,24 @@
 <div class="container">
   <div class="form-container">
     <app-text-input
-      label="first_name"
+      label="First Name"
       [control]="getControl('first_name')"
-      placeholder="Input user name"
+      placeholder="Input first name"
       type="text"
     ></app-text-input>
     <app-text-input
-      label="last_name"
+      label="Last Name"
       [control]="getControl('last_name')"
-      placeholder="Input user name"
+      placeholder="Input last name"
       type="text"
     ></app-text-input>
     <app-text-input
-      label="email"
+      label="Email"
       [control]="getControl('email')"
-      placeholder="Input password"
+      placeholder="Input email"
       type="email"
     ></app-text-input>
-    {{ createForm.value | json }}
+    <!-- {{ createForm.value | json }} -->
 
     <button class="submit-btn" (click)="onSubmit()" type="submit">Thêm</button>
   </div>
